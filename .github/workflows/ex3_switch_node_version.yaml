@@ -11,9 +11,10 @@ jobs:
         - name : setup node
           uses: actions/setup-node@v6
           with:
-            node-version: 'lts/*'
+            node-version: ${{env.NODE_VERSION}}
         - name: run test
           shell: bash
           run: |
             echo "npm install"
             echo "npm test"
+            node -v
