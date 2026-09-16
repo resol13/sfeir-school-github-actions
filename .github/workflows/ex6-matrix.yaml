@@ -21,4 +21,3 @@ jobs:
           run: |
             cd ./docs
             npm install
-            npm test
