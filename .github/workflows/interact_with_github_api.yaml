@@ -6,7 +6,7 @@ jobs:
   create-issue:
     permissions:
       issues: write
-    runs-on: self_hosted
+    runs-on: self-hosted
     steps:
       - id: short_sha
         run: |          
