@@ -1,0 +1,25 @@
+name: reusable workflow - Module 4 - 2026
+on: 
+  workflow_call:
+    inputs:
+      lts:
+        required: false
+        type: string
+        default: 'lts/*'
+
+jobs:
+  run-npm-test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v6
+        - name : setup node
+          uses: actions/setup-node@v6
+          with:
+            node-version: '${{ inputs.lts }}'
+        - name: run test
+          shell: bash
+          run: |
+            node -v
+            npm install
+            npm test
