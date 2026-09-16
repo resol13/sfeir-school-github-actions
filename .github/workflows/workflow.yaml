@@ -1,4 +1,4 @@
-name: Reusable Workflow
+name: Reusable Workflow - Module 4 - 2026
 on:
   workflow_dispatch:
   pull_request:
