@@ -11,14 +11,14 @@ jobs:
       - id: short_sha
         run: |          
           echo "sha_short=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
-          echo "${{ secrets.GITHUB_TOKEN }}"
+          echo $GITHUB_OUTPUT
       # - id: short_sha
       #   run: |
       #     echo "GITHUB_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV 
             # USE {{env.GITHUB_SHA}} in next step
       - name: Create issue using REST API
         run: |
-        
+
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
