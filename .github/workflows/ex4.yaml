@@ -2,7 +2,7 @@ name: reusable workflow - Module 4 - 2026
 on: 
   workflow_call:
     inputs:
-      lts:
+      node-version:
         required: false
         type: string
         default: 'lts/*'
@@ -16,7 +16,7 @@ jobs:
         - name : setup node
           uses: actions/setup-node@v6
           with:
-            node-version: '${{ inputs.lts }}'
+            node-version: '${{ inputs.node-version }}'
         - name: run test
           shell: bash
           run: |
