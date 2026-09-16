@@ -6,16 +6,16 @@ jobs:
   run-npm-install:
     strategy:
       matrix:
-        node_version: [20, lts/*]
-        runner_os: [ubuntu-latest, ubuntu-22.04]
-    runs-on: ${{ matrix.runner_os }}
+        version: [20, lts/*]
+        os: [ubuntu-latest, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
     steps:
         - name: checkout
           uses: actions/checkout@v6
         - name : setup node
           uses: actions/setup-node@v6
           with:
-            node-version: '${{ matrix.node_version }}'
+            node-version: '${{ matrix.version }}'
         - name: run install
           shell: bash
           run: |
